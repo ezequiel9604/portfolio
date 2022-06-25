@@ -1,0 +1,295 @@
+
+html, body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+$font-bold: "montserrat-bold", Courier, monospace;
+$font-medium: "montserrat-medium", Courier, monospace;
+$font-regular: "montserrat-regular", Courier, monospace;
+$font-light: "montserrat-light", Courier, monospace;
+
+$color-primary: #ffffff;
+$color-secondary: #FC7326;
+$color-terciary: #272727;
+
+$font-title-size: (
+    "desktop" : 70px,
+    "tablet" : 38px,
+    "phone" : 50px,
+);
+
+$font-subtitle-size: (
+    "desktop" : 26px,
+    "tablet" : 18px,
+    "phone" : 14px,
+);
+
+$font-arrow-text-size: (
+    "desktop" : 20px,
+    "tablet" : 16px,
+    "phone" : 13px,
+);
+
+$font-arrow-size: (
+    "desktop" : 40px,
+    "tablet" : 30px,
+    "phone" : 20px,
+);
+
+$font-buttons-size: (
+    "desktop" : 18px,
+    "tablet" : 16px,
+    "phone" : 14px,
+);
+
+$width-dimensions: (
+    "desktop": 1440px,
+    "tablet": 900px,
+    "phone": 500px
+);
+
+@mixin container90($margin) {
+    width: 90%;
+    margin: $margin auto;
+}
+
+@mixin container80($margin) {
+    width: 80%;
+    margin: $margin auto;
+}
+
+@mixin container70($margin) {
+    width: 70%;
+    margin: $margin auto;
+}
+
+@mixin displayFlex($align, $justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin movingSpansStyles {
+    position: relative;
+    top: 80px;
+    opacity: 0;
+
+    animation-name: movingSpans;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+@mixin fitContents($auto: false, $margin: 0) {
+    width: fit-content;
+    height: fit-content;
+    @if $auto {
+        margin: $margin auto;
+    }
+}
+
+@mixin movingTopBottom($name, $begin, $end) {
+    @keyframes #{$name} {
+        from{ top: $begin; opacity: 0;}
+        to{top: $end; opacity: 1;}
+    }
+}
+
+
+
+main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: $color-primary;
+}
+
+.slides{
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    position: relative;
+}
+
+#home{
+    background-color: #ddd;
+}
+
+.slides__home__header{
+    @include container90(4%);
+    @include displayFlex(flex-end, right);
+
+    a{
+        @include displayFlex(center, center);
+        font-family: $font-medium;
+        font-size: map-get($font-buttons-size, desktop);
+        background-color: $color-secondary;
+        color: $color-primary;
+        padding: 8px 20px;
+        border-radius: 50px;
+
+    }
+
+    @media (max-width: map-get($width-dimensions, tablet)) {
+        display: none;
+    }
+
+}
+
+
+.slides__home__content{
+    @include container90(15%);
+
+    @media (max-width: map-get($width-dimensions, tablet)) {
+        @include container90(30%);
+    }
+
+    @media (max-width: map-get($width-dimensions, phone)) {
+        @include container80(34%);
+    }
+
+    #{&}__title {
+        width: 100%;
+        @include displayFlex(center, center);
+        font-family: $font-bold;
+        font-size: map-get($font-title-size, desktop);
+        margin-bottom: 2%;
+        position: relative;
+        overflow: hidden;
+
+        @media (max-width: map-get($width-dimensions, tablet)) {
+            font-size: map-get($font-title-size, tablet);
+            
+        }
+
+        @media (max-width: map-get($width-dimensions, phone)) {
+            font-size: map-get($font-title-size, phone);
+            display: block;
+            margin-bottom: 6%;
+        }
+
+        span{
+            display: inline-block;
+            padding: 10px 0;
+            margin: 0 10px;
+            
+            @include movingSpansStyles();
+
+            @media (max-width: map-get($width-dimensions, tablet)) {
+            }
+
+            @media (max-width: map-get($width-dimensions, phone)) {
+                display: block;
+            }
+        }
+    }
+
+    @include movingTopBottom(movingSpans, 80px, 0px);
+
+    #{&}__subtitle{
+        text-align: center;
+        font-family: $font-medium;
+        font-size: map-get($font-subtitle-size, desktop);
+        overflow: hidden;
+        padding: 10px 0;
+
+        span{
+            @include movingSpansStyles();
+        }
+
+        @media (max-width: map-get($width-dimensions, tablet)) {
+            font-size: map-get($font-subtitle-size, tablet);
+        }
+
+        @media (max-width: map-get($width-dimensions, phone)) {
+            font-size: map-get($font-subtitle-size, phone);
+            line-height: 22px;
+        }
+
+    }
+
+    $moving-span-list: 1, 2, 3, 4, 5, 6;
+    $counter : 1;
+    @each $i in $moving-span-list {
+        .moving__span__#{$i}{
+            animation-delay: $counter;
+        }
+        $counter: $counter + 0.2s;
+    }
+    
+}
+
+
+.slides__home__footer{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 5%;
+    left: 42%;
+
+    @media (max-width: map-get($width-dimensions, tablet)) {
+       left: 36%;
+    }
+    @media (max-width: map-get($width-dimensions, phone)) {
+        left: 24%;
+     }
+
+    span{
+        @include displayFlex(center, center);
+        font-family: $font-medium;
+        font-size: map-get($font-arrow-text-size, desktop);
+
+        @media (max-width: map-get($width-dimensions, tablet)) {
+            font-size: map-get($font-arrow-text-size, tablet);
+        }
+        @media (max-width: map-get($width-dimensions, phone)) {
+            font-size: map-get($font-arrow-text-size, phone);
+        }
+    }
+
+    a{
+        @include fitContents(true, 0);
+        @include displayFlex(center, center);
+        
+        margin-top: 10px;
+        position: relative;
+        overflow: hidden;
+
+        @include movingTopBottom(movingArrow, 0px, 10px);
+    
+        i{
+            font-size: map-get($font-arrow-size, desktop);
+            color: $color-terciary;
+            position: relative;
+            top: 0px;
+        
+            &:hover{
+                animation-name: movingArrow;
+                animation-iteration-count: infinite;
+                animation-duration: 0.5s;
+            }
+
+            @media (max-width: map-get($width-dimensions, tablet)) {
+                font-size: map-get($font-arrow-size, tablet);
+            }
+
+            @media (max-width: map-get($width-dimensions, phone)) {
+                font-size: map-get($font-arrow-size, phone);
+            }
+        
+        }
+    
+    }
+
+}
+
+
+
+
+
+#aboutme{
+    background-color: aquamarine;
+}
