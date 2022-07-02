@@ -278,5 +278,186 @@ main {
 }
 
 #aboutme {
-  background-color: aquamarine;
+  background-image: linear-gradient(#272727 60%, #ffffff 40%);
+}
+
+.aboutme__content {
+  width: 60%;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+@media (max-width: 900px) {
+  .aboutme__content {
+    width: 80%;
+    margin: 0% auto;
+    margin-top: 20%;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content {
+    width: 90%;
+    margin: 0% auto;
+    margin-top: 30%;
+  }
+}
+.aboutme__content .aboutme__content__description {
+  width: 100%;
+}
+.aboutme__content .aboutme__content__description h2 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  font-family: "montserrat-bold", Courier, monospace;
+  font-size: 20px;
+  color: #ffffff;
+}
+@media (max-width: 900px) {
+  .aboutme__content .aboutme__content__description h2 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content .aboutme__content__description h2 {
+    font-size: 14px;
+  }
+}
+.aboutme__content .aboutme__content__description p {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  font-family: "montserrat-regular", Courier, monospace;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: justify;
+  line-height: 40px;
+}
+@media (max-width: 900px) {
+  .aboutme__content .aboutme__content__description p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content .aboutme__content__description p {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+.aboutme__content .aboutme__content__skills {
+  background-color: #fafafa;
+  border-radius: 8px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 8%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 900px) {
+  .aboutme__content .aboutme__content__skills {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content .aboutme__content__skills {
+    margin-top: 15%;
+  }
+}
+.aboutme__content .aboutme__content__skills__display {
+  width: 30%;
+  height: 300px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-right: 1px solid #cccccc;
+}
+@media (max-width: 900px) {
+  .aboutme__content .aboutme__content__skills__display {
+    height: 260px;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content .aboutme__content__skills__display {
+    height: 200px;
+  }
+}
+.aboutme__content .aboutme__content__skills__display:last-child {
+  border-right: 0;
+}
+.aboutme__content .aboutme__content__skills__display figure {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+@media (max-width: 900px) {
+  .aboutme__content .aboutme__content__skills__display figure {
+    margin-bottom: 8%;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content .aboutme__content__skills__display figure {
+    font-size: 14px;
+  }
+}
+.aboutme__content .aboutme__content__skills__display figure i {
+  font-size: 30px;
+}
+@media (max-width: 900px) {
+  .aboutme__content .aboutme__content__skills__display figure i {
+    font-size: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content .aboutme__content__skills__display figure i {
+    font-size: 14px;
+  }
+}
+.aboutme__content .aboutme__content__skills__display h6 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 15%;
+  font-family: "montserrat-bold", Courier, monospace;
+  font-size: 20px;
+}
+@media (max-width: 900px) {
+  .aboutme__content .aboutme__content__skills__display h6 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content .aboutme__content__skills__display h6 {
+    font-size: 14px;
+  }
+}
+.aboutme__content .aboutme__content__skills__display ul {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.aboutme__content .aboutme__content__skills__display ul li {
+  text-align: center;
+  margin-bottom: 25%;
+  font-family: "montserrat-regular", Courier, monospace;
+  font-size: 18px;
+  color: #272727;
+}
+@media (max-width: 900px) {
+  .aboutme__content .aboutme__content__skills__display ul li {
+    font-size: 18px;
+  }
+}
+@media (max-width: 500px) {
+  .aboutme__content .aboutme__content__skills__display ul li {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=main.css.map */
