@@ -1,115 +1,14 @@
 
+@import "./variables.scss";
+
+@import "./mixins.scss";
+
 html, body{
     width: 100%;
     height: 100%;
     position: relative;
     scroll-behavior: smooth;
 }
-
-$font-bold: "montserrat-bold", Courier, monospace;
-$font-medium: "montserrat-medium", Courier, monospace;
-$font-regular: "montserrat-regular", Courier, monospace;
-$font-light: "montserrat-light", Courier, monospace;
-
-$color-primary: #ffffff;
-$color-secondary: #FC7326;
-$color-terciary: #272727;
-
-$font-title-size: (
-    "desktop" : 70px,
-    "tablet" : 38px,
-    "phone" : 50px,
-);
-
-$font-subtitle-size: (
-    "desktop" : 26px,
-    "tablet" : 18px,
-    "phone" : 14px,
-);
-
-$font-text-size: (
-    "desktop" : 20px,
-    "tablet" : 18px,
-    "phone" : 14px,
-);
-
-$font-arrow-text-size: (
-    "desktop" : 20px,
-    "tablet" : 16px,
-    "phone" : 13px,
-);
-
-$font-arrow-size: (
-    "desktop" : 40px,
-    "tablet" : 30px,
-    "phone" : 20px,
-);
-
-$font-icon-size: (
-    "desktop" : 30px,
-    "tablet" : 20px,
-    "phone" : 14px,
-);
-
-$font-buttons-size: (
-    "desktop" : 18px,
-    "tablet" : 16px,
-    "phone" : 14px,
-);
-
-$width-dimensions: (
-    "desktop": 1440px,
-    "tablet": 900px,
-    "phone": 500px
-);
-
-@mixin container90($margin) {
-    width: 90%;
-    margin: $margin auto;
-}
-
-@mixin container80($margin) {
-    width: 80%;
-    margin: $margin auto;
-}
-
-@mixin container70($margin) {
-    width: 70%;
-    margin: $margin auto;
-}
-
-@mixin displayFlex($align, $justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-@mixin movingSpansStyles {
-    position: relative;
-    top: 80px;
-    opacity: 0;
-
-    animation-name: movingSpans;
-    animation-fill-mode: forwards;
-    animation-duration: 1s;
-}
-
-@mixin fitContents($auto: false, $margin: 0) {
-    width: fit-content;
-    height: fit-content;
-    @if $auto {
-        margin: $margin auto;
-    }
-}
-
-@mixin movingTopBottom($name, $begin, $end) {
-    @keyframes #{$name} {
-        from{ top: $begin; opacity: 0;}
-        to{top: $end; opacity: 1;}
-    }
-}
-
-
 
 main{
     width: 100%;
@@ -121,7 +20,6 @@ main{
 .slides{
     width: 100%;
     height: 100%;
-
     overflow: hidden;
     position: relative;
 }
@@ -130,8 +28,8 @@ main{
     background-color: #ddd;
 }
 
-.slides__home__header{
-    @include container90(4%);
+.home__header{
+    @include container90(5%);
     @include displayFlex(flex-end, right);
 
     a{
@@ -151,7 +49,7 @@ main{
 }
 
 
-.slides__home__content{
+.home__content{
     @include container90(15%);
 
     @media (max-width: map-get($width-dimensions, tablet)) {
@@ -234,7 +132,7 @@ main{
 }
 
 
-.slides__home__footer{
+.home__footer{
     width: fit-content;
     height: fit-content;
     position: absolute;
@@ -306,9 +204,9 @@ main{
 }
 .aboutme__content{
     width: 60%;
-    margin-left: 10%;
     margin-top: 10%;
-
+    margin-left: 10%;
+    
     @media (max-width: map-get($width-dimensions, tablet)) {
         @include container80(0%);
         margin-top: 20%;
@@ -460,6 +358,247 @@ main{
                 }
             }
 
+        }
+
+    }
+
+}
+
+
+#projects{
+    background-color: #ddd;
+}
+
+.projects__content{
+    width: 80%;
+    margin-top: 5%;
+    margin-left: 5%;
+
+    @media (max-width: map-get($width-dimensions, tablet)) {
+        @include container90(5%);
+        margin-top: 18%;
+    }
+
+    @media (max-width: map-get($width-dimensions, phone)) {
+        margin-top: 25%;
+    }
+
+    #{&}__title{
+        @include container90(4%);
+
+        h2{
+            text-align: center;
+            font-family: $font-bold;
+            font-size: map-get($font-text-size, desktop);
+            color: $color-terciary;
+
+            @media (max-width: map-get($width-dimensions, tablet)) {
+                font-size: map-get($font-text-size, tablet);
+            }
+
+            @media (max-width: map-get($width-dimensions, phone)) {
+                font-size: map-get($font-text-size, phone);
+            }
+        }
+    }
+
+    #{&}__slideshow{
+        width: 100%;
+        @include displayFlex(none, none);
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: 0;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        &__slides{
+            width: 99%;
+            margin: 0 5px;
+            @include displayFlex(flex-start, space-between);
+            flex-shrink: 0;
+
+            @media (max-width: map-get($width-dimensions, tablet)) {
+                width: 100%;
+                margin: 0 0;
+               flex-wrap: wrap;
+            }
+
+            &__description{
+                width: 28%;
+
+                h4{
+                    font-family: $font-medium;
+                    font-size: map-get($font-text-size, desktop);
+                    color: $color-terciary;
+                    margin-bottom: 10px;
+
+                    @media (max-width: map-get($width-dimensions, tablet)) {
+                        margin-bottom: 20px;
+                        text-align: center;
+                        font-size: map-get($font-text-size, tablet);
+                    }
+
+                    @media (max-width: map-get($width-dimensions, phone)) {
+                        font-size: map-get($font-text-size, phone);
+                    }
+                }
+
+                h6{
+                    font-family: $font-medium;
+                    font-size: map-get($font-text-size, desktop);
+                    color: $color-terciary;
+                    
+                    @media (max-width: map-get($width-dimensions, tablet)) {
+                        margin-bottom: 20px;
+                        text-align: center;
+                        font-size: map-get($font-text-size, tablet);
+                    }
+
+                    @media (max-width: map-get($width-dimensions, phone)) {
+                        font-size: map-get($font-text-size, phone);
+                    }
+
+                }
+
+                p{
+                    text-align: justify;
+                    font-family: $font-light;
+                    font-size: map-get($font-text-size, desktop);
+                    color: $color-terciary;
+                    line-height: 28px;
+                    margin: 20px 0;
+
+                    @media (max-width: map-get($width-dimensions, tablet)) {
+                        display: none;
+                    }
+                }
+
+                a{
+                    width: fit-content;
+                    @include displayFlex(center, center);
+                    font-family: $font-medium;
+                    font-size: map-get($font-buttons-size, desktop);
+                    background-color: $color-secondary;
+                    color: $color-primary;
+                    padding: 8px 20px;
+                    border-radius: 50px;
+                    outline: none;
+                    
+                    &:hover{
+                        background-color: #fb5f04;
+                    }
+
+                    @media (max-width: map-get($width-dimensions, tablet)) {
+                        margin: 10px auto;
+                        font-size: map-get($font-text-size, tablet);
+                    }
+
+                    @media (max-width: map-get($width-dimensions, phone)) {
+                        font-size: map-get($font-text-size, phone);
+                    }
+                }
+
+                @media (max-width: map-get($width-dimensions, tablet)) {
+                    width: 100%;
+                    order: 2;
+                }
+
+            }
+
+            &__sample{
+                width: 70%;
+                height: 600px;
+                background-color: $color-primary;
+                overflow: hidden;
+
+                div:first-child{
+                    border-bottom: 2px solid #ddd;
+                    width: 100%;
+                    height: 5%;
+
+                    span{
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        margin-left: 15px;
+                        margin-top: 8px;
+                        background-color: $color-terciary;
+                        border-radius: 50%;
+
+                        @media (max-width: map-get($width-dimensions, tablet)) {
+                            width: 12px;
+                            height: 12px;
+                            margin-left: 12px;
+                            margin-top: 6px;
+                        }
+
+                        @media (max-width: map-get($width-dimensions, phone)) {
+                            width: 8px;
+                            height: 8px;
+                            margin-left: 10px;
+                            margin-top: 5px;
+                        }
+                    }
+
+                }
+
+                div:last-child{
+                    width: 100%;
+                    height: 95%;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                @media (max-width: map-get($width-dimensions, tablet)) {
+                    width: 100%;
+                    height: 450px;
+                    margin-bottom: 20px;
+                    order: 1;
+                }
+
+                @media (max-width: map-get($width-dimensions, phone)) {
+                    height: 350px;
+                }
+
+            }
+
+        }
+
+    }
+
+    #{&}__controls{
+        width: fit-content;
+        margin: 0px auto;
+        margin-top: 30px;
+
+        button{
+            width: 40px;
+            height: 15px;
+            margin: 0 10px;
+            border-radius: 50px;
+            background-color: $color-terciary;
+            border: none;
+
+            @media (max-width: map-get($width-dimensions, tablet)) {
+                width: 35px;
+                height: 12px;
+                margin: 0 12px;
+            }
+
+            @media (max-width: map-get($width-dimensions, phone)) {
+                width: 30px;
+                height: 10px;
+                margin: 0 15px;
+            }
+        }
+
+        @media (max-width: map-get($width-dimensions, phone)) {
+            margin-top: 20px;
         }
 
     }

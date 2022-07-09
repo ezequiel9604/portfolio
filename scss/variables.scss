@@ -1,0 +1,57 @@
+
+$font-bold: "montserrat-bold", Courier, monospace;
+$font-medium: "montserrat-medium", Courier, monospace;
+$font-regular: "montserrat-regular", Courier, monospace;
+$font-light: "montserrat-light", Courier, monospace;
+
+$color-primary: #ffffff;
+$color-secondary: #FC7326;
+$color-terciary: #272727;
+
+$font-title-size: (
+    "desktop" : 70px,
+    "tablet" : 38px,
+    "phone" : 50px,
+);
+
+$font-subtitle-size: (
+    "desktop" : 26px,
+    "tablet" : 18px,
+    "phone" : 14px,
+);
+
+$font-text-size: (
+    "desktop" : 20px,
+    "tablet" : 18px,
+    "phone" : 14px,
+);
+
+$font-arrow-text-size: (
+    "desktop" : 20px,
+    "tablet" : 16px,
+    "phone" : 13px,
+);
+
+$font-arrow-size: (
+    "desktop" : 40px,
+    "tablet" : 30px,
+    "phone" : 20px,
+);
+
+$font-icon-size: (
+    "desktop" : 30px,
+    "tablet" : 20px,
+    "phone" : 14px,
+);
+
+$font-buttons-size: (
+    "desktop" : 18px,
+    "tablet" : 16px,
+    "phone" : 14px,
+);
+
+$width-dimensions: (
+    "desktop": 1440px,
+    "tablet": 900px,
+    "phone": 500px
+);

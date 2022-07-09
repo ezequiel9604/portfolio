@@ -1,0 +1,47 @@
+
+
+@mixin container90($margin) {
+    width: 90%;
+    margin: $margin auto;
+}
+
+@mixin container80($margin) {
+    width: 80%;
+    margin: $margin auto;
+}
+
+@mixin container70($margin) {
+    width: 70%;
+    margin: $margin auto;
+}
+
+@mixin displayFlex($align, $justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin movingSpansStyles {
+    position: relative;
+    top: 80px;
+    opacity: 0;
+
+    animation-name: movingSpans;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+@mixin fitContents($auto: false, $margin: 0) {
+    width: fit-content;
+    height: fit-content;
+    @if $auto {
+        margin: $margin auto;
+    }
+}
+
+@mixin movingTopBottom($name, $begin, $end) {
+    @keyframes #{$name} {
+        from{ top: $begin; opacity: 0;}
+        to{top: $end; opacity: 1;}
+    }
+}

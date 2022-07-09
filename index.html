@@ -14,39 +14,36 @@
 <main>
 
     <!-- slides home container -->
-    <div class="slides" id="home">
+    <!-- <div class="slides" id="home">
 
-        <div class="slides__home__header">
+        <div class="home__header">
             <a href="#">
                 <i class="bi bi-file-earmark-pdf"></i>
                 &nbsp;Download cv
             </a>
         </div>
-        
-        <div class="slides__home__content">
-            <div class="slides__home__content__title">
+        <div class="home__content">
+            <div class="home__content__title">
                 <span class="moving__span__1">Hello,</span>
                 <span class="moving__span__2">Welcome</span>
                 <span class="moving__span__3">to my</span>
                 <span class="moving__span__4">portfolio.</span>
             </div>
-            <div class="slides__home__content__subtitle">
+            <div class="home__content__subtitle">
                 <span class="moving__span__5">I’m a full-stack web developer, programmer and designer.</span>
             </div>
         </div>
-
-
-        <div class="slides__home__footer">
+        <div class="home__footer">
             <span>Click below to keep watching!</span>
             <a href="#aboutme">
                 <i class="bi bi-chevron-down"></i>
             </a>
         </div>
 
-    </div>
+    </div> -->
 
     <!-- slides aboutme container -->
-    <div class="slides" id="aboutme">
+    <!-- <div class="slides" id="aboutme">
 
         <div class="aboutme__content">
 
@@ -95,6 +92,7 @@
                     <ul>
                         <li>Figma</li>
                         <li>Github</li>
+                        <li>Firebase</li>
                         <li>Lucid Chart</li>
                     </ul>
                 </div>
@@ -103,10 +101,113 @@
 
         </div>
 
+    </div> -->
+
+    <!-- slides projects container -->
+    <div class="slides" id="projects">
+
+        <div class="projects__content">
+
+            <div class="projects__content__title">
+                <h2>My projects:</h2>
+            </div>
+
+            <div class="projects__content__slideshow" id="projects__slideshow">
+
+                <div class="projects__content__slideshow__slides">
+
+                    <div class="projects__content__slideshow__slides__description">
+                        <h4>Shop-app (e-commerce app):</h4>
+                        <h6>Framework: ReactJs</h6>
+
+                        <p>As you might see in the image besides, this is an e-commerce web site or application, 
+                        like all related apps, clients will create an account and buy items, the whole project is 
+                        split up in two apps, one of them will be used for clients, it counts with an GUI that helps 
+                        future customers to select items and pay for their orders and the other one will be used for 
+                        the admininistration part, if you want to take a look at the project just click on 'see github'.</p>
+
+                        <a href="#" target="_blank">See Github</a>
+                    </div>
+                    <div class="projects__content__slideshow__slides__sample">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/shopApp.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects__content__slideshow__slides">
+
+                    <div class="projects__content__slideshow__slides__description">
+                        <h4>Shop admin (e-commerce admin app):</h4>
+                        <h6>Framework: ReactJs</h6>
+
+                        <p>This is an admininistration app which will be use to administrate the client's app, 
+                            this app counts with an GUI that helps to add, remove, modified and see the products, 
+                            although it will display the stats when the admin can search for the orders made, 
+                            how many product we have left, how many users we have connected also it counts with 
+                            a chat to talk with the users through the client's app, if you want to take a look at 
+                            the project just click on 'see github'.</p>
+
+                        <a href="#" target="_blank">See Github</a>
+                    </div>
+                    <div class="projects__content__slideshow__slides__sample">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/shopAdmin.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects__content__slideshow__slides">
+
+                    <div class="projects__content__slideshow__slides__description">
+                        <h4>Shop-app (e-commerce app):</h4>
+                        <h6>Framework: ReactJs</h6>
+
+                        <p>As you might see in the image besides, this is an e-commerce web site or application, 
+                        like all related apps, clients will create an account and buy items, the whole project is 
+                        split up in two apps, one of them will be used for clients, it counts with an GUI that helps 
+                        future customers to select items and pay for their orders and the other one will be used for 
+                        the admininistration part, if you want to take a look at the project just click on 'see github'.</p>
+
+                        <a href="#" target="_blank">See Github</a>
+                    </div>
+                    <div class="projects__content__slideshow__slides__sample">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div>
+                            <img src="./images/shopApp.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="projects__content__controls">
+                <button id="projects__control_1"></button>
+                <button id="projects__control_2"></button>
+                <button id="projects__control_3"></button>
+            </div>
+
+        </div>
+
     </div>
 
 </main>
 
+    <script src="./js/scripts.js"></script>
 
 </body>
 </html>
