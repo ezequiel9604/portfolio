@@ -16,7 +16,7 @@ window.addEventListener("load", function(){
 
     projectButton2.addEventListener("click", function(ev){
         if(projectsSlideshow.scrollLeft == 0 || projectsSlideshow.scrollLeft > 0){
-            projectsSlideshow.scrollTo((projectsSlideshow.offsetWidth+1), 0);
+            projectsSlideshow.scrollTo((projectsSlideshow.offsetWidth*1), 0);
         }
     });
 
