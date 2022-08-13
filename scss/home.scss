@@ -1,0 +1,167 @@
+
+#home{
+    background-color: #ddd;
+}
+
+.home__header{
+    @include container90(5%);
+    @include displayFlex(flex-end, right);
+
+    a{
+        @include displayFlex(center, center);
+        font-family: $font-medium;
+        font-size: map-get($font-buttons-size, "desktop");
+        background-color: $color-secondary;
+        color: $color-primary;
+        padding: 8px 20px;
+        border-radius: 50px;
+    }
+
+    @media (max-width: map-get($width-dimensions, "tablet")) {
+        display: none;
+    }
+}
+
+.home__content{
+    @include container90(15%);
+
+    @media (max-width: map-get($width-dimensions, "tablet")) {
+        @include container90(30%);
+    }
+
+    @media (max-width: map-get($width-dimensions, "phone")) {
+        @include container80(34%);
+    }
+
+    #{&}__title {
+        width: 100%;
+        @include displayFlex(center, center);
+        font-family: $font-bold;
+        font-size: map-get($font-title-size, "desktop");
+        margin-bottom: 2%;
+        position: relative;
+        overflow: hidden;
+
+        @media (max-width: map-get($width-dimensions, "tablet")) {
+            font-size: map-get($font-title-size, "tablet");
+            
+        }
+
+        @media (max-width: map-get($width-dimensions, "phone")) {
+            font-size: map-get($font-title-size, "phone");
+            display: block;
+            margin-bottom: 6%;
+        }
+
+        span{
+            display: inline-block;
+            padding: 10px 0;
+            margin: 0 10px;
+            
+            @include movingSpansStyles();
+
+            @media (max-width: map-get($width-dimensions, "tablet")) {
+            }
+
+            @media (max-width: map-get($width-dimensions, "phone")) {
+                display: block;
+            }
+        }
+    }
+
+    @include movingTopBottom(movingSpans, 80px, 0px);
+
+    #{&}__subtitle{
+        text-align: center;
+        font-family: $font-medium;
+        font-size: map-get($font-subtitle-size, "desktop");
+        overflow: hidden;
+        padding: 10px 0;
+
+        span{
+            @include movingSpansStyles();
+        }
+
+        @media (max-width: map-get($width-dimensions, "tablet")) {
+            font-size: map-get($font-subtitle-size, "tablet");
+        }
+
+        @media (max-width: map-get($width-dimensions, "phone")) {
+            font-size: map-get($font-subtitle-size, "phone");
+            line-height: 22px;
+        }
+    }
+
+    $moving-span-list: 1, 2, 3, 4, 5, 6;
+    $counter : 1;
+    @each $i in $moving-span-list {
+        .moving__span__#{$i}{
+            animation-delay: $counter;
+        }
+        $counter: $counter + 0.2s;
+    }
+    
+}
+
+.home__footer{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 5%;
+    left: 42%;
+
+    @media (max-width: map-get($width-dimensions, "tablet")) {
+       left: 36%;
+    }
+    @media (max-width: map-get($width-dimensions, "phone")) {
+        left: 24%;
+     }
+
+    span{
+        @include displayFlex(center, center);
+        font-family: $font-medium;
+        font-size: map-get($font-arrow-text-size, "desktop");
+
+        @media (max-width: map-get($width-dimensions, "tablet")) {
+            font-size: map-get($font-arrow-text-size, "tablet");
+        }
+        @media (max-width: map-get($width-dimensions, "phone")) {
+            font-size: map-get($font-arrow-text-size, "phone");
+        }
+    }
+
+    a{
+        @include fitContents(true, 0);
+        @include displayFlex(center, center);
+        
+        margin-top: 10px;
+        position: relative;
+        overflow: hidden;
+
+        @include movingTopBottom(movingArrow, 0px, 10px);
+    
+        i{
+            font-size: map-get($font-arrow-size, "desktop");
+            color: $color-terciary;
+            position: relative;
+            top: 0px;
+        
+            &:hover{
+                animation-name: movingArrow;
+                animation-iteration-count: infinite;
+                animation-duration: 0.5s;
+            }
+
+            @media (max-width: map-get($width-dimensions, "tablet")) {
+                font-size: map-get($font-arrow-size, "tablet");
+            }
+
+            @media (max-width: map-get($width-dimensions, "phone")) {
+                font-size: map-get($font-arrow-size, "phone");
+            }
+        
+        }
+    
+    }
+
+}

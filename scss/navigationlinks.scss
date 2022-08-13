@@ -1,0 +1,94 @@
+
+.navigation__links__content{
+    width: fit-content;
+    box-sizing: border-box;
+
+    direction: rtl;
+    position: fixed;
+    top: 20%;
+    right: -20%;
+    z-index: 20;
+
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+
+    @keyframes navigation-show-animation {
+        from{right: -20%;}
+        to{right: 6%;}
+    }
+    @keyframes navigation-hide-animation {
+        from{right: 6%;}
+        to{right: -20%;}
+    }
+
+    @media (max-width: map-get($width-dimensions, "tablet")) {
+        width: 60%;
+        direction:ltr;
+
+        top: 7%;
+        left: 20%;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media (max-width: map-get($width-dimensions, "phone")) {
+        width: 90%;
+        top: 6%;
+        left: 5%;
+    }
+
+    a{
+        width: fit-content;
+        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+        background-color: $color-primary;
+    
+        direction:ltr;
+    
+        padding: 10px 20px;
+        border-radius: 50px;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+        outline: none;
+
+        @media (max-width: map-get($width-dimensions, "tablet")) {
+            margin-bottom: 0px;
+            padding: 10px 20px;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: map-get($width-dimensions, "phone")) {
+            margin-bottom: 0px;
+            padding: 8px 15px;
+        }
+
+        span{
+            font-family: $font-regular;
+            font-size: map-get($font-text-size, "desktop");
+            color: $color-terciary;
+            padding-right: 18px;
+            padding-left: 10px;
+
+            @media (max-width: map-get($width-dimensions, "tablet")) {
+                display: none;
+            }
+
+        }
+
+        i{
+            color: $color-terciary;
+            font-size: map-get($font-icon-size, "desktop");
+            
+            @media (max-width: map-get($width-dimensions, "tablet")) {
+                font-size: map-get($font-icon-size, "tablet");
+            }
+
+            @media (max-width: map-get($width-dimensions, "tablet")) {
+                font-size: map-get($font-icon-size, "phone");
+            }
+        }
+
+    }
+
+}
